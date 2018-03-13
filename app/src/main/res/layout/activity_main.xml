@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="user"
+            type="com.adabinding.databinding.pojo.User" />
+
+        <variable
+            name="handler"
+            type="com.adabinding.databinding.handlers.UserHandler"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:gravity="center_vertical"
+        >
+
+       <TextView
+           android:id="@+id/title"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/title"
+           android:textSize="@dimen/title_size"
+           android:gravity="center"
+           android:textStyle="bold"
+           android:layout_marginBottom="@dimen/margin_title"
+           />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}"
+            tools:text="Jack"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.address}"
+            tools:text="USA, Str. South Congress, No. 234A"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.phoneNumber}"
+            tools:text="+349788390298"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/email_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.email}"
+            tools:text="jack.doe@gmail.com"
+            android:textAlignment="center"
+            />
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler::onClickDone}"
+            android:text="@string/done"
+            android:layout_marginLeft="@dimen/button_margin"
+            android:layout_marginRight="@dimen/button_margin"
+            android:layout_marginTop="@dimen/button_margin_top"
+            />
+
+    </LinearLayout>
+
+</layout>

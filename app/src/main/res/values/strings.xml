@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DataBinding</string>
+    <string name="done">Done</string>
+    <string name="title">User\'s profile</string>
+</resources>
